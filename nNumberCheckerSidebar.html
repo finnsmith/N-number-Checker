@@ -1,0 +1,29 @@
+<link href="https://ssl.gstatic.com/docs/script/css/add-ons.css"
+     rel="stylesheet"> 
+ 
+<div class="sidebar">
+    <div class="block form-group">
+        <p>The N-number checker will go through this spreadsheet and correct any invalid N-numbers.</p>
+        <p>For example:</p>
+            <ul>
+                <li>12345678 ---> N12345678</li>
+                <li>n12345678 ---> N12345678</li>
+                <li>N-12345678 ---> N12345678</li>
+                <li>N-12345678 ---> N12345678</li>
+            </ul>
+        <p>Additionally, any spaces around valid N-numbers will be removed.</p>
+        <p>N-numbers that are one digit too long or too short will be highlighted (in violet, of course).</p>
+        <button class="blue" id="check_numbers">Run the N-number Checker</button>
+    </div>
+</div>
+ 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+ 
+<script>
+    $(function() { 
+   $('#check_numbers').click(function() {
+   google.script.run.checkNumbers()
+   });
+   
+ });
+</script>
